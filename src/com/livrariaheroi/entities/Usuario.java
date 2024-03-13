@@ -1,6 +1,8 @@
-package com.livrariaheroi.models;
+package com.livrariaheroi.entities;
 
 public class Usuario {
+
+    private int id;
     private String nome;
     private String cpf;
     private String email;
@@ -9,11 +11,16 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String nome, String cpf, String email, String telefone) {
+    public Usuario(int id, String nome, String cpf, String email, String telefone) {
+        this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.telefone = telefone;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNome() {

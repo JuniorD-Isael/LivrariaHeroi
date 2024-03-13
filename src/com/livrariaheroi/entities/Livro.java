@@ -1,6 +1,10 @@
-package com.livrariaheroi.models;
+package com.livrariaheroi.entities;
 
-public class Livro {
+import com.livrariaheroi.interfaces.Alugavel;
+
+public class Livro implements Alugavel {
+
+    private int id;
     private String titulo;
     private String autor;
     private int ano;
@@ -9,10 +13,15 @@ public class Livro {
     public Livro() {
     }
 
-    public Livro(String titulo, String autor, int ano) {
+    public Livro(int id, String titulo, String autor, int ano) {
+        this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.ano = ano;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitulo() {
@@ -27,10 +36,12 @@ public class Livro {
         return ano;
     }
 
+    @Override
     public boolean getAlugado() {
-        return alugado;
+        return false;
     }
 
+    @Override
     public void setAlugado(boolean alugado) {
         this.alugado = alugado;
     }
