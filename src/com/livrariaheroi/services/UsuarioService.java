@@ -3,7 +3,6 @@ package com.livrariaheroi.services;
 public class UsuarioService {
 
     public static void criarUsuario() {
-
     }
 
     public static void listarUsuarios() {
