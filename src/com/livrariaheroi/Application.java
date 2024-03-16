@@ -2,6 +2,7 @@ package com.livrariaheroi;
 
 import com.livrariaheroi.controller.LivroController;
 import com.livrariaheroi.controller.UsuarioController;
+import com.livrariaheroi.util.ScannerUtil;
 
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ public class Application {
     }
 
     public static void menu() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = ScannerUtil.getScanner();
 
         System.out.println("Escolha uma das opções abaixo:");
         System.out.println("1 - Cadastrar um novo usuário" + "\n2 - Listar livros" + "\n3 - Buscar livro" + "\n0 - Sair");
