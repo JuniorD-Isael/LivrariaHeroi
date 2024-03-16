@@ -1,13 +1,13 @@
 package com.livrariaheroi.entities;
 
-public class Usuario extends Pessoa{
-    public Usuario(int id, String nome, String cpf, String email, String telefone) {
-        super(id, nome, cpf, email, telefone);
+public class Cliente extends Pessoa{
+    public Cliente(int id, String nome, String cpf, String email, String telefone, boolean isAdmin) {
+        super(id, nome, cpf, email, telefone, isAdmin);
     }
 
     @Override
     public String toString() {
-        return "Usuario{" +
+        return "Cliente{" +
                 "id=" + getId() +
                 ", nome='" + getNome() + '\'' +
                 ", cpf='" + getCpf() + '\'' +

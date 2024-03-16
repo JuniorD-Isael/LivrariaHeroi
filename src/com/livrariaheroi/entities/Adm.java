@@ -4,8 +4,8 @@ public class Adm extends Pessoa {
 
     boolean isAdmin = true;
 
-    public Adm(int id, String nome, String cpf, String email, String telefone) {
-        super(id, nome, cpf, email, telefone);
+    public Adm(int id, String nome, String cpf, String email, String telefone, boolean isAdmin) {
+        super(id, nome, cpf, email, telefone, isAdmin);
     }
 
     @Override
