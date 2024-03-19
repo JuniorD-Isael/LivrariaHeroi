@@ -10,13 +10,11 @@ public class Adm extends Pessoa {
 
     @Override
     public String toString() {
-        return "Adm{" +
-                "id=" + getId() +
-                ", nome='" + getNome() + '\'' +
-                ", cpf='" + getCpf() + '\'' +
-                ", email='" + getEmail() + '\'' +
-                ", telefone='" + getTelefone() + '\'' +
-                ", isAdmin='" + isAdmin + '\'' +
-                '}';
+        return "Nome: " + getNome() +
+                "\nCpf: " + getCpf() +
+                "\nEmail:" + getEmail() +
+                "\nTelefone: " + getTelefone() +
+                "\nAdmin: É um administrador." +
+                "\n--------------------------\n";
     }
 }

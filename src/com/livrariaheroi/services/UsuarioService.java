@@ -17,7 +17,7 @@ public class UsuarioService {
     public static void criarUsuario() {
         Scanner scanner = ScannerUtil.getScanner();
         scanner.nextLine();
-        HashMap<Integer, Pessoa> usuario = Biblioteca.getInstance().getUsuarios();
+        HashMap<Integer, Pessoa> usuarios = Biblioteca.getInstance().getUsuarios();
 
         out.println("O usuário é administrador? (S/N)");
         Character resposta = scanner.nextLine().toUpperCase().charAt(0);
@@ -34,13 +34,20 @@ public class UsuarioService {
 
         if (resposta.equals('S')) {
             validarAdm();
-            usuario.put(id, new Adm(id, nome, cpf, email, telefone, true));
+            usuarios.put(id, new Adm(id, nome, cpf, email, telefone, true));
+            listarUsuarios();
+
         } else {
-            usuario.put(id, new Cliente(id, nome, cpf, email, telefone, false));
+            usuarios.put(id, new Cliente(id, nome, cpf, email, telefone, false));
+            listarUsuarios();
         }
     }
 
     public static void listarUsuarios() {
+        HashMap<Integer, Pessoa> usuarios = Biblioteca.getInstance().getUsuarios();
+        for (Pessoa usuario : usuarios.values()) {
+            out.println(usuario.toString());
+        }
     }
 
     public static void buscarUsuario() {

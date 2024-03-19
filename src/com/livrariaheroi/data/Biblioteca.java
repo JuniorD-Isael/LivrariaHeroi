@@ -11,6 +11,8 @@ public class Biblioteca {
     private HashMap<Integer, Pessoa> usuarios;
     private HashMap<Integer, Aluguel> alugueis;
 
+    private static Biblioteca instance = null;
+
     private Biblioteca() {
         this.livros = new HashMap<>();
         this.usuarios = new HashMap<>();
@@ -18,7 +20,10 @@ public class Biblioteca {
     }
 
     public static Biblioteca getInstance() {
-        return new Biblioteca();
+        if (instance == null) {
+            instance = new Biblioteca();
+        }
+        return instance;
     }
 
     public HashMap<Integer, Aluguel> getAlugueis() {
