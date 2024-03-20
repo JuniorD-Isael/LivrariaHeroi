@@ -14,12 +14,4 @@ public class LivroController {
     public static void cadastrarLivro() {
         LivroService.cadastrarLivro();
     }
-
-    public static void deletarLivro() {
-        LivroService.deletarLivro();
-    }
-
-    public static void atualizarLivro() {
-        LivroService.atualizarLivro();
-    }
 }

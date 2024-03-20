@@ -19,13 +19,14 @@ public class Application {
     public static void menu() {
         Scanner scanner = ScannerUtil.getScanner();
         int opcao = -1;
-        while(opcao != 0) {
+        while (opcao != 0) {
             out.println("""
                     Escolha uma das opções abaixo:
                     1 - Cadastrar um novo usuário
                     2 - Listar usuários
-                    3 - Listar livros
-                    4 - Buscar livro
+                    3 - Cadastar um novo livro
+                    4 - Listar livros
+                    5 - Buscar livro
                     0 - Sair""");
 
             opcao = scanner.nextInt();
@@ -37,9 +38,12 @@ public class Application {
                     UsuarioController.listarUsuarios();
                     break;
                 case 3:
-                    LivroController.listarLivros();
+                    LivroController.cadastrarLivro();
                     break;
                 case 4:
+                    LivroController.listarLivros();
+                    break;
+                case 5:
                     LivroController.buscarLivro();
                     break;
                 case 0:
