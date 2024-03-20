@@ -16,7 +16,7 @@ public class LivroService {
         scanner.nextLine();
         HashMap<Integer, Livro> livros = Biblioteca.getInstance().getLivros();
 
-        IdGenerator.generateLivroId();
+        int id = IdGenerator.generateLivroId();
         out.println("Digite o título do livro: ");
         String titulo = scanner.nextLine();
         out.println("Digite o autor do livro: ");
@@ -24,10 +24,14 @@ public class LivroService {
         out.println("Digite de publicação do livro: ");
         int ano = scanner.nextInt();
 
-        livros.put(IdGenerator.generateLivroId(), new Livro(IdGenerator.generateLivroId(), titulo, autor, ano));
+        livros.put(id, new Livro(id, titulo, autor, ano));
     }
 
     public static void listarLivros() {
+        HashMap<Integer, Livro> livros = Biblioteca.getInstance().getLivros();
+        for (Livro livro : livros.values()) {
+            out.println(livro.toString());
+        }
     }
 
     public static void buscarLivro() {

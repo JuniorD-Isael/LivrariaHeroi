@@ -1,6 +1,7 @@
 package com.livrariaheroi.entities;
 
 import com.livrariaheroi.interfaces.Alugavel;
+import jdk.jshell.Snippet;
 
 public class Livro implements Alugavel {
 
@@ -38,11 +39,21 @@ public class Livro implements Alugavel {
 
     @Override
     public boolean getAlugado() {
-        return false;
+        return alugado;
     }
 
     @Override
     public void setAlugado(boolean alugado) {
         this.alugado = alugado;
+    }
+
+    @Override
+    public String toString() {
+        String status = alugado ? "Alugado" : "Disponível";
+        return "Titulo: " + titulo +
+                "\nAutor: " + autor +
+                "\nAno: " + ano +
+                "\nAlugado: " + status +
+                "\n--------------------------\n";
     }
 }
