@@ -5,7 +5,6 @@ public class Aluguel {
     private String dataDevolucao;
     private String livro_id;
     private String cliente_id;
-    private String senha = "@admin1234";
 
     public Aluguel(String dataAluguel, String dataDevolucao, String livro_id, String cliente_id) {
         this.dataAluguel = dataAluguel;
@@ -44,9 +43,5 @@ public class Aluguel {
 
     public void setCliente(String cliente_id) {
         this.cliente_id = cliente_id;
-    }
-
-    public String getSenha() {
-        return senha;
     }
 }

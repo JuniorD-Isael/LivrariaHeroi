@@ -64,7 +64,8 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "Nome: " + nome +
+        return "Id: " + id +
+                "\nNome: " + nome +
                 "\nEmail: "+ email +
                 "\nTelefone: "+ telefone;
     }

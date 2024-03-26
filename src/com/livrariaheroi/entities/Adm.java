@@ -10,7 +10,8 @@ public class Adm extends Pessoa {
 
     @Override
     public String toString() {
-        return "Nome: " + getNome() +
+        return "Id: " + getId() +
+                "Nome: " + getNome() +
                 "\nCpf: " + getCpf() +
                 "\nEmail:" + getEmail() +
                 "\nTelefone: " + getTelefone() +

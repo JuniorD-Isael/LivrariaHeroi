@@ -35,7 +35,17 @@ public class LivroService {
     }
 
     public static void buscarLivro() {
-
+        // Buscar livro por id
+        out.println("Digite o id do livro: ");
+        Scanner scanner = ScannerUtil.getScanner();
+        int id = scanner.nextInt();
+        HashMap<Integer, Livro> livros = Biblioteca.getInstance().getLivros();
+        Livro livro = livros.get(id);
+        if (livro != null) {
+            out.println(livro.toString());
+        } else {
+            out.println("Livro não encontrado");
+        }
     }
 
     public static void deletarLivro() {
