@@ -49,8 +49,41 @@ public class LivroService {
     }
 
     public static void deletarLivro() {
+        // Deletar livro por id
+        out.println("Digite o id do livro: ");
+        Scanner scanner = ScannerUtil.getScanner();
+        int id = scanner.nextInt();
+        HashMap<Integer, Livro> livros = Biblioteca.getInstance().getLivros();
+        Livro livro = livros.remove(id);
+        if (livro != null) {
+            out.println("Livro deletado");
+        } else {
+            out.println("Livro não encontrado");
+        }
     }
 
     public static void atualizarLivro() {
+        // Atualizar livro por id
+        out.println("Digite o id do livro: ");
+        Scanner scanner = ScannerUtil.getScanner();
+        int id = scanner.nextInt();
+        HashMap<Integer, Livro> livros = Biblioteca.getInstance().getLivros();
+        Livro livro = livros.get(id);
+        if (livro != null) {
+            scanner.nextLine();
+            out.println("Digite o título do livro: ");
+            String titulo = scanner.nextLine();
+            out.println("Digite o autor do livro: ");
+            String autor = scanner.nextLine();
+            out.println("Digite de publicação do livro: ");
+            int ano = scanner.nextInt();
+
+            livro.setTitulo(titulo);
+            livro.setAutor(autor);
+            livro.setAno(ano);
+            out.println("Livro atualizado");
+        } else {
+            out.println("Livro não encontrado");
+        }
     }
 }

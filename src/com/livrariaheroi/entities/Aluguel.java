@@ -1,47 +1,65 @@
 package com.livrariaheroi.entities;
 
-public class Aluguel {
-    private String dataAluguel;
-    private String dataDevolucao;
-    private String livro_id;
-    private String cliente_id;
+import java.util.Date;
 
-    public Aluguel(String dataAluguel, String dataDevolucao, String livro_id, String cliente_id) {
+public class Aluguel {
+    private int id;
+    private Date dataAluguel;
+    private Date dataDevolucao;
+    private Livro livro;
+    private Pessoa pessoa;
+
+    public Aluguel(int id, Date dataAluguel, Date dataDevolucao, Livro livro_id, Pessoa pessoa) {
+        this.id = id;
         this.dataAluguel = dataAluguel;
         this.dataDevolucao = dataDevolucao;
-        this.livro_id = livro_id;
-        this.cliente_id = cliente_id;
+        this.livro = livro_id;
+        this.pessoa = pessoa;
     }
 
-    public String getDataAluguel() {
+    public int getId() {
+        return id;
+    }
+
+    public Date getDataAluguel() {
         return dataAluguel;
     }
 
-    public void setDataAluguel(String dataAluguel) {
+    public void setDataAluguel(Date dataAluguel) {
         this.dataAluguel = dataAluguel;
     }
 
-    public String getDataDevolucao() {
+    public Date getDataDevolucao() {
         return dataDevolucao;
     }
 
-    public void setDataDevolucao(String dataDevolucao) {
+    public void setDataDevolucao(Date dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
 
-    public String getLivro() {
-        return livro_id;
+    public Livro getLivro() {
+        return livro;
     }
 
-    public void setLivro(String livro_id) {
-        this.livro_id = livro_id;
+    public void setLivro(Livro livro) {
+        this.livro = livro;
     }
 
-    public String getCliente() {
-        return cliente_id;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
-    public void setCliente(String cliente_id) {
-        this.cliente_id = cliente_id;
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = this.pessoa;
+    }
+
+    @Override
+    public String toString() {
+        return "Id: " + id +
+                "\nData do Aluguel: " + dataAluguel +
+                "\nData da devolução: " + dataDevolucao +
+                "\nCliente: " + pessoa.getNome() +
+                "\nLivro: " + livro.getTitulo() +
+                "\n--------------------------\n";
     }
 }

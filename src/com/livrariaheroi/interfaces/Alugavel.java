@@ -1,6 +1,6 @@
 package com.livrariaheroi.interfaces;
 
 public interface Alugavel {
-    public boolean getAlugado();
+    public boolean isAlugado();
     public void setAlugado(boolean alugado);
 }

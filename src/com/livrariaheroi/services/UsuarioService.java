@@ -34,12 +34,13 @@ public class UsuarioService {
 
         if (resposta.equals('S')) {
             validarAdm();
-            usuarios.put(id, new Adm(id, nome, cpf, email, telefone, true));
-            listarUsuarios();
-
+            Adm adm = new Adm(id, nome, cpf, email, telefone, true);
+            usuarios.put(id, adm);
+            out.println(adm.toString());
         } else {
-            usuarios.put(id, new Cliente(id, nome, cpf, email, telefone, false));
-            listarUsuarios();
+            Cliente cliente = new Cliente(id, nome, cpf, email, telefone, false);
+            usuarios.put(id, cliente);
+            out.println(cliente.toString());
         }
     }
 

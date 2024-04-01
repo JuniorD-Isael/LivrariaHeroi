@@ -7,6 +7,7 @@ public class Pessoa {
     private String cpf;
     private String email;
     private String telefone;
+    private int livrosAlugados = 0;
     private boolean isAdmin;
 
     public Pessoa(int id, String nome, String cpf, String email, String telefone, boolean isAdmin) {
@@ -38,6 +39,9 @@ public class Pessoa {
         return telefone;
     }
 
+    public int getLivrosAlugados() {
+        return livrosAlugados;
+    }
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -52,6 +56,10 @@ public class Pessoa {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public void setLivrosAlugados(int livrosAlugados) {
+        this.livrosAlugados = livrosAlugados;
     }
 
     public boolean isAdmin() {

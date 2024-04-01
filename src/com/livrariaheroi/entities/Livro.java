@@ -28,16 +28,28 @@ public class Livro implements Alugavel {
         return titulo;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     public String getAutor() {
         return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     public int getAno() {
         return ano;
     }
 
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
     @Override
-    public boolean getAlugado() {
+    public boolean isAlugado() {
         return alugado;
     }
 

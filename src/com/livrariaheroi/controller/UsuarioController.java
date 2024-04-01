@@ -22,4 +22,8 @@ public class UsuarioController {
     public static void atualizarUsuario() {
         UsuarioService.atualizarUsuario();
     }
+
+    public static void cadastrarUsuario() {
+        UsuarioService.criarUsuario();
+    }
 }
