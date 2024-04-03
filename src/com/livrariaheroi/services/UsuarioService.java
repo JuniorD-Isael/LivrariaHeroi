@@ -51,13 +51,52 @@ public class UsuarioService {
         }
     }
 
-    public static void buscarUsuario() {
-    }
 
     public static void deletarUsuario() {
+        Scanner scanner = ScannerUtil.getScanner();
+        HashMap<Integer, Pessoa> usuarios = Biblioteca.getInstance().getUsuarios();
+        out.println("Digite o id do usuário que deseja deletar:");
+        int id = scanner.nextInt();
+        Pessoa usuario = usuarios.remove(id);
+        if (usuario != null) {
+            out.println("Usuário deletado");
+        } else {
+            out.println("Usuário não encontrado");
+        }
     }
 
     public static void atualizarUsuario() {
+        Scanner scanner = ScannerUtil.getScanner();
+        HashMap<Integer, Pessoa> usuarios = Biblioteca.getInstance().getUsuarios();
+        out.println("Digite o id do usuário que deseja atualizar:");
+        int id = scanner.nextInt();
+        Pessoa usuario = usuarios.get(id);
+        if (usuario != null) {
+            scanner.nextLine();
+            out.println("Digite o email do usuário:");
+            String email = scanner.nextLine();
+            out.println("Digite o telefone do usuário:");
+            String telefone = scanner.nextLine();
+            usuario.setEmail(email);
+            usuario.setTelefone(telefone);
+            out.println("Usuário atualizado");
+        } else {
+            out.println("Usuário não encontrado");
+        }
+    }
+
+
+    public static void buscarUsuarioByEmail() {
+        Scanner scanner = ScannerUtil.getScanner();
+        HashMap<Integer, Pessoa> usuarios = Biblioteca.getInstance().getUsuarios();
+        out.println("Digite o email do usuário:");
+        String email = scanner.nextLine();
+        Pessoa usuario = usuarios.values().stream().filter(u -> u.getEmail().equals(email)).findFirst().orElse(null);
+        if (usuario != null) {
+            out.println(usuario.toString());
+        } else {
+            out.println("Usuário não encontrado");
+        }
     }
 
     public static boolean validarAdm() {
@@ -78,4 +117,5 @@ public class UsuarioService {
         }
         return isAdmin;
     }
+
 }

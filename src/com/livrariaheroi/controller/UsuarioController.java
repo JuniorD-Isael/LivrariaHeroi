@@ -12,7 +12,7 @@ public class UsuarioController {
     }
 
     public static void buscarUsuario() {
-        UsuarioService.buscarUsuario();
+        UsuarioService.buscarUsuarioByEmail();
     }
 
     public static void deletarUsuario() {

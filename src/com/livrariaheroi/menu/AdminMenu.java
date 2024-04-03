@@ -23,8 +23,10 @@ public class AdminMenu {
                     5  - Deletar livros
                     6  - Atualizar livros
                     7  - Listar usuários
-                    8  - Cadastrar usuários
-                    9 - Deletar usuários
+                    8  - Buscar usuários
+                    9  - Cadastrar usuários
+                    10  - Atualizar usuários
+                    11 - Deletar usuários
                     0  - Sair
                     """);
             out.println("Digite a opção desejada: ");
@@ -37,8 +39,10 @@ public class AdminMenu {
                 case 5 -> LivroController.deletarLivro();
                 case 6 -> LivroController.atualizarLivro();
                 case 7 -> UsuarioController.listarUsuarios();
-                case 8 -> UsuarioController.cadastrarUsuario();
-                case 9 -> UsuarioController.deletarUsuario();
+                case 8 -> UsuarioController.buscarUsuario();
+                case 9 -> UsuarioController.cadastrarUsuario();
+                case 10 -> UsuarioController.atualizarUsuario();
+                case 11 -> UsuarioController.deletarUsuario();
                 case 0 -> out.println("Saindo...");
                 default -> throw new IllegalStateException("Unexpected value: " + opcao);
             }
