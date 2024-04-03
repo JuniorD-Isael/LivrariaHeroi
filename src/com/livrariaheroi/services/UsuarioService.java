@@ -5,6 +5,7 @@ import com.livrariaheroi.data.Biblioteca;
 import com.livrariaheroi.entities.Adm;
 import com.livrariaheroi.entities.Cliente;
 import com.livrariaheroi.entities.Pessoa;
+import com.livrariaheroi.util.CpfValidator;
 import com.livrariaheroi.util.IdGenerator;
 import com.livrariaheroi.util.ScannerUtil;
 
@@ -27,6 +28,10 @@ public class UsuarioService {
         String nome = scanner.nextLine();
         out.println("Digite o cpf do usuário:");
         String cpf = scanner.nextLine();
+        if (!CpfValidator.isValido(cpf)) {
+            out.println("CPF inválido");
+            return;
+        }
         out.println("Digite o email do usuário:");
         String email = scanner.nextLine();
         out.println("Digite o telefone do usuário:");
