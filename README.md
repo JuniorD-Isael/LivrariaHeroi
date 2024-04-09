@@ -57,3 +57,11 @@ O projeto possui as seguintes funcionalidades:
 ## Como Executar 🏃‍♂️
 
 Para executar o projeto, você precisa ter o Java instalado em sua máquina. Em seguida, navegue até o diretório raiz do projeto e execute o comando `java src/com/livrariaheroi/Application.java`.`
+
+## [UML](https://lucid.app/lucidchart/84edfeef-2685-4387-b2b2-fab824b3bb32/edit?viewport_loc=-761%2C-759%2C2559%2C1234%2C0_0&invitationId=inv_896485ab-69dc-4778-ad5d-4a5358cf63bc)
+
+### Membros do Grupo:
+[Isael](https://github.com/JuniorD-Isael)
+[Leonardo](https://github.com/Le0z1nk)
+[Tayna](https://github.com/TaynaGoes)
+[Paula](https://github.com/milkshakedeamora)
