@@ -1,8 +1,12 @@
 package com.livrariaheroi.util;
+
+import com.livrariaheroi.data.Biblioteca;
+
 public class CpfValidator {
 
     public static boolean isValido(String cpf) {
-        if (cpf == null || cpf.length() != 11 || todosDigitosIguais(cpf)) {
+
+        if (cpf == null || cpf.length() != 11 || todosDigitosIguais(cpf) || CpfJaCadastrado(cpf)){
             return false;
         }
 
@@ -29,5 +33,10 @@ public class CpfValidator {
         }
         int resto = soma % 11;
         return resto < 2 ? 0 : 11 - resto;
+    }
+
+    private static boolean CpfJaCadastrado(String cpf) {
+        return Biblioteca.getInstance().getUsuarios().values().stream()
+                .anyMatch(usuario -> usuario.getCpf().equals(cpf));
     }
 }
