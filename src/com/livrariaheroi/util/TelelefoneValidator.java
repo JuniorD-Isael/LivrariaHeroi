@@ -14,7 +14,7 @@ public class TelelefoneValidator {
         while (true) {
             out.println("Digite o telefone do usuário: ");
             telefone = scanner.nextLine();
-            if (telefone.matches("^[0-9]{2}-[0-9]{5}-[0-9]{4}$")) {
+            if (telefone.matches("^[0-9]{2}[0-9]{5}[0-9]{4}$")) {
                 break;
             } else {
                 out.println("Telefone inválido");
