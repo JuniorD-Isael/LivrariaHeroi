@@ -6,6 +6,7 @@ import com.livrariaheroi.entities.Adm;
 import com.livrariaheroi.entities.Cliente;
 import com.livrariaheroi.entities.Pessoa;
 import com.livrariaheroi.util.CpfValidator;
+import com.livrariaheroi.util.EmailValidator;
 import com.livrariaheroi.util.IdGenerator;
 import com.livrariaheroi.util.ScannerUtil;
 
@@ -16,14 +17,23 @@ import static java.lang.System.*;
 
 public class UsuarioService {
     public static void criarUsuario() {
+
+        Character resposta;
+
         Scanner scanner = ScannerUtil.getScanner();
         scanner.nextLine();
         HashMap<Integer, Pessoa> usuarios = Biblioteca.getInstance().getUsuarios();
 
-        out.println("O usuário é administrador? (S/N)");
-        Character resposta = scanner.nextLine().toUpperCase().charAt(0);
+        while (true) {
+            out.println("O usuário é administrador? (S/N)");
+            resposta = scanner.nextLine().toUpperCase().charAt(0);
+            if (resposta.equals('S') || resposta.equals('N')) {
+                break;
+            } else {
+                out.println("Resposta inválida");
+            }
+        }
 
-        int id = IdGenerator.generateUsuarioId();
         out.println("Digite o nome do usuário:");
         String nome = scanner.nextLine();
         out.println("Digite o cpf do usuário:");
@@ -32,17 +42,26 @@ public class UsuarioService {
             out.println("CPF inválido");
             return;
         }
+
+
         out.println("Digite o email do usuário:");
         String email = scanner.nextLine();
+        while (!EmailValidator.isValido(email)) {
+            out.println("Email inválido");
+            email = scanner.nextLine();
+        }
+
         out.println("Digite o telefone do usuário:");
         String telefone = scanner.nextLine();
 
         if (resposta.equals('S')) {
             validarAdm();
+            int id = IdGenerator.generateUsuarioId();
             Adm adm = new Adm(id, nome, cpf, email, telefone, true);
             usuarios.put(id, adm);
             out.println(adm.toString());
         } else {
+            int id = IdGenerator.generateUsuarioId();
             Cliente cliente = new Cliente(id, nome, cpf, email, telefone, false);
             usuarios.put(id, cliente);
             out.println(cliente.toString());
