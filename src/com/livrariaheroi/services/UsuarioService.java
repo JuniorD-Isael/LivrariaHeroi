@@ -112,6 +112,7 @@ public class UsuarioService {
 
     public static void buscarUsuarioByEmail() {
         Scanner scanner = ScannerUtil.getScanner();
+        scanner.nextLine();
         HashMap<Integer, Pessoa> usuarios = Biblioteca.getInstance().getUsuarios();
         out.println("Digite o email do usuário:");
         String email = scanner.nextLine();
