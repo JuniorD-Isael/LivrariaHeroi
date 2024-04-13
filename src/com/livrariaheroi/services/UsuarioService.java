@@ -37,13 +37,12 @@ public class UsuarioService {
         out.println("Digite o cpf do usuário:");
         String cpf = scanner.nextLine();
         if (!CpfValidator.isValido(cpf)) {
-            out.println("CPF inválido");
+            out.println("CPF inválido ou já cadastrado!");
             return;
         }
 
         String email = EmailValidator.isValido();
 
-        out.println("Digite o telefone do usuário:");
         String telefone = TelelefoneValidator.isValido();
 
         if (resposta.equals('S')) {
